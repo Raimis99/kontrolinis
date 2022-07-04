@@ -2,17 +2,18 @@
 include('config.php');
 
 extract($_POST);
-$query = "INSERT INTO 'contact-data'('name','surname','phone','email','subject','message') VALUE('".$name."','".$surname."','".$email."','".$phone."','".$subject."','".$message."')";
-$result = $mysql->query($query);
+$query = "INSERT INTO 'contact-data' ('name','surname','phone','email','subject','message')
+VALUES ('".$name."','".$surname."','".$email."','".$phone."','".$subject."','".$message."')";
+$result = $mysqli->query($query);
 if(!$result){
-    echo"Kazkas blogai".$mysql->error;
+    echo"Kazkas blogai".$mysqli->error;
 }
 
 echo"aciu uz jusu uzklausa";
-$mysql->close();
+$mysqli->close();
 
 
-
+print_r($_POST);
 
 
 
